@@ -2,13 +2,13 @@
 
 **🕵️‍♀️ Investigating Rug Pulls, Honeypots, and Insider Exits on Solana Meme Coins**
 
-**Live Dashboard:** [Link to your deployed Dune Dashboard]
+**Live Dashboard:** [MCSI Dashboard](https://dune.com/satoshi_builder/mcsi)
 
 ## Overview
 
 This Dune dashboard provides tools to analyze the Solana meme coin landscape, focusing on identifying potential risks associated with new token launches. It combines market-wide aggregated views with a deep-dive analysis tool for specific tokens launched on Pump.fun, Raydium Launchpad, and Gofundmeme.
 
-Built for the Superteam Earn Bounty: [Link to Bounty]
+Built for the Superteam Earn Bounty: [SuperTeam](https://earn.superteam.fun/listing/memecrime-scene-investigation-dashboard/)
 
 ## Dashboard Structure
 
