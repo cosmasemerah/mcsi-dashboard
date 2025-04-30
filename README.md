@@ -60,7 +60,7 @@ _(Activated by the `token_mint_address` parameter)_
     - **Query:** `queries/per_token/M2_2_time_to_first_sell.sql` (Query ID: 5027519)
     - **Logic:** Calculates the time difference between `creation_time` and the `first_sell_time` from the previous query. Short times can be a red flag.
 - **Optional: 🔍 Track Specific Wallet Fund Flow:**
-  - **Query:** `queries/per_token/Track_Wallet_Fund_Flow.sql`
+  - **Query:** `queries/per_token/Track_Wallet_Fund_Flow.sql`(Query ID: 5065561)
   - **Logic:** Allows users to input an additional wallet address (`{{wallet_to_track}}`) to see a detailed breakdown of the selected token's movements involving that specific wallet. Similar to the Creator Fund Flow, it categorizes transactions (DEX Sell/Buy, Transfer In/Out, etc.) relative to the tracked wallet. _Note: This view is optimized to show activity within the last 30 days._
   - **Usage:** Enter a token address and a wallet address to track in the dashboard parameters. The corresponding table will populate.
 - **Module 3: 📈📉 Price & Volume Anomalies:**
