@@ -20,7 +20,7 @@ The dashboard is organized into two main sections:
 ## How to Use
 
 1.  **Market Overview:** Explore the charts and tables to understand recent launch activity, volume distributions, bot presence, and potential serial deployers.
-2.  **Token Deep Dive:** Navigate to this section and enter a valid Solana Token Mint Address into the `token_mint_address` parameter field. Click "Run" on the Dune dashboard to populate the modules below with analysis specific to that token.
+2.  **Token Deep Dive:** Navigate to this section and enter a valid Solana Token Mint Address into the `token_mint_address` parameter field. _(Optional)_ Enter another address in the `wallet_to_track` field to analyze its specific token flow. Click "Run" on the Dune dashboard to populate the modules below.
 
 ## Modules Explained
 
@@ -59,6 +59,10 @@ _(Activated by the `token_mint_address` parameter)_
   - **Time to First Sell KPI:**
     - **Query:** `queries/per_token/M2_2_time_to_first_sell.sql` (Query ID: 5027519)
     - **Logic:** Calculates the time difference between `creation_time` and the `first_sell_time` from the previous query. Short times can be a red flag.
+- **Optional: 🔍 Track Specific Wallet Fund Flow:**
+  - **Query:** `queries/per_token/Track_Wallet_Fund_Flow.sql`
+  - **Logic:** Allows users to input an additional wallet address (`{{wallet_to_track}}`) to see a detailed breakdown of the selected token's movements involving that specific wallet. Similar to the Creator Fund Flow, it categorizes transactions (DEX Sell/Buy, Transfer In/Out, etc.) relative to the tracked wallet. _Note: This view is optimized to show activity within the last 30 days._
+  - **Usage:** Enter a token address and a wallet address to track in the dashboard parameters. The corresponding table will populate.
 - **Module 3: 📈📉 Price & Volume Anomalies:**
   - **Query:** `queries/per_token/M3_price_volume_anomalies.sql` (Query ID: 5009192)
   - **Logic:** Aggregates `dex_solana.trades` per minute. Calculates VWAP price and total USD volume. Uses `LAG()` to find minute-over-minute price change, flagging drops >90%. Uses `AVG()` and `STDDEV_POP()` over a 60-minute rolling window to calculate average volume and standard deviation, flagging volume spikes > (Avg + 3\*StdDev).
